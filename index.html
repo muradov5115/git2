@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cereal Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: #fdfcf7;
+      overflow-x: hidden;
+    }
+    .grain {
+      position: absolute;
+      top: -20px;
+      font-size: 18px;
+      opacity: 0.7;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+    .product:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body class="text-gray-800 font-sans relative">
+  <script>
+    function createGrain() {
+      const count = 3 + Math.floor(Math.random() * 3);
+      for (let i = 0; i < count; i++) {
+        const grain = document.createElement("div");
+        grain.className = "grain";
+        grain.textContent = "🌾";
+        grain.style.left = Math.random() * window.innerWidth + "px";
+        grain.style.animationDuration = 4 + Math.random() * 6 + "s";
+        document.body.appendChild(grain);
+        setTimeout(() => grain.remove(), 12000);
+      }
+    }
+    setInterval(createGrain, 300);
+  </script>
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-yellow-600">🌾 Cereal Product</h1>
+      <ul class="flex space-x-6 items-center">
+        <li><a href="#about" class="hover:text-yellow-600">Biz haqimizda</a></li>
+        <li><a href="#products" class="hover:text-yellow-600">Mahsulotlar</a></li>
+        <li><a href="#recipes" class="hover:text-yellow-600">Retseptlar</a></li>
+        <li><a href="#certificates" class="hover:text-yellow-600">Sertifikatlar</a></li>
+        <li><a href="#eco" class="hover:text-yellow-600">Ekologiya</a></li>
+        <li><a href="#contact" class="hover:text-yellow-600">Aloqa</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="relative h-screen flex items-center justify-center text-center text-white">
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="https://cdn.coverr.co/videos/coverr-golden-wheat-field-1600/1080p.mp4" type="video/mp4">
+      Sizning brauzeringiz videoni qo‘llab-quvvatlamaydi.
+    </video>
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 px-6">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Sifatli don mahsulotlari</h2>
+      <p class="text-lg mb-6">“Cereal Product” kompaniyasi sizga eng toza va foydali un hamda kepakni taqdim etadi.</p>
+      <a href="#products" class="bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-yellow-700">
+        Mahsulotlarni ko‘rish
+      </a>
+    </div>
+  </section>
+  <section id="about" class="container mx-auto px-6 py-16 text-center">
+    <h3 class="text-3xl font-bold mb-6">Biz haqimizda</h3>
+    <p class="max-w-2xl mx-auto text-lg text-gray-600">
+      “Cereal Product” kompaniyasi don mahsulotlarini qayta ishlash va ularni xalqimizga sifatli tarzda yetkazib berishga ixtisoslashgan.
+      Bizning maqsadimiz — sog‘lom ovqatlanish uchun tabiiy va foydali mahsulotlarni taqdim etish.
+    </p>
+  </section>
+  <section id="products" class="bg-white py-16">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-12">Mahsulotlarimiz</h3>
+      <div class="grid gap-8 md:grid-cols-2">
+        <div class="product bg-gray-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition transform">
+          <img src="https://storage.kun.uz/source/8/I60cNJZrkwaFOtDL_heQ5MSq9u1koD5c.jpg" 
+               alt="Un" class="w-full h-56 object-cover transition-transform duration-300">
+          <div class="p-6">
+            <h4 class="text-2xl font-semibold mb-3 text-yellow-600">Un</h4>
+            <p class="text-gray-600 mb-4">
+              Yuqori sifatli bug‘doy unlari non, makaron va boshqa oziq-ovqat mahsulotlarini tayyorlashda eng ishonchli tanlovdir.
+            </p>
+          </div>
+        </div>
+        <div class="product bg-gray-50 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition transform">
+          <img src="https://api.cabinet.smart-market.uz/uploads/images/ff80818180bc8449f528f376" 
+               alt="Kepak" class="w-full h-56 object-cover transition-transform duration-300">
+          <div class="p-6">
+            <h4 class="text-2xl font-semibold mb-3 text-yellow-600">Kepak (Bran)</h4>
+            <p class="text-gray-600 mb-4">
+              Kepak tolaga boy bo‘lib, ovqat hazmini yaxshilash, organizmni tozalash va sog‘lom turmush tarzini qo‘llab-quvvatlashda muhim rol o‘ynaydi.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="recipes" class="bg-yellow-50 py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-12">Retseptlar</h3>
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="bg-white rounded-lg shadow p-6">
+          <h4 class="text-xl font-semibold mb-2">Uy noni</h4>
+          <p class="text-gray-600">Bizning unimizdan tayyorlangan yumshoq va mazali non retsepti.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h4 class="text-xl font-semibold mb-2">Dietik yorma</h4>
+          <p class="text-gray-600">Kepak asosida tayyorlanadigan sog‘lom va yengil taom.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <h4 class="text-xl font-semibold mb-2">Makaron</h4>
+          <p class="text-gray-600">Yuqori sifatli unimizdan tayyorlangan mazali makaron retsepti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates" class="container mx-auto px-6 py-16 text-center">
+    <h3 class="text-3xl font-bold mb-12">Sifat sertifikatlari</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <img src="https://www.onsetworldwide.com/uploads/1/3/6/4/136420734/sqf-cert-2022.jpg" alt="Sertifikat 1" class="rounded-lg shadow">
+      <img src="https://www.timelessfood.com/wp-content/uploads/2022/06/Screen-Shot-2022-06-08-at-6.09.54-PM.png" alt="Sertifikat 2" class="rounded-lg shadow">
+      <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/certificate-design-template-fcc203faa8cf791638bdd8f838fff5d7_screen.jpg?ts=1625730736" alt="Sertifikat 3" class="rounded-lg shadow">
+    </div>
+  </section>
+  <section id="eco" class="bg-green-50 py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold mb-6 text-green-700">Ekologiya va Sog‘lom hayot</h3>
+      <p class="max-w-2xl mx-auto text-lg text-gray-600">
+        Bizning mahsulotlarimiz 100% tabiiy, sun’iy qo‘shimchasiz va ekologik toza tarzda ishlab chiqariladi.
+        Sog‘lom hayot va to‘g‘ri ovqatlanishni qo‘llab-quvvatlaymiz.
+      </p>
+    </div>
+  </section>
+  <section id="contact" class="py-16 bg-yellow">
+    <div class="container text-center">
+      <h3 class="title">Aloqa</h3>
+      <p>
+  📍     <a href="https://maps.google.com/?q=ToshkentChoshtepaMelek" target="_blank">
+    Toshkent shahri, Choshtepa, Melek
+        </a>
+      </p>
+      <p>📞 +998 94 617 51 15</p>
+      <p>✉️ <span class="contact-email">irodgagafurova13@gmail.com</span></p>
+      <div class="contact-actions">
+        <button id="contact-send-btn" class="btn btn-primary">Xabar yuborish</button>
+        <button id="contact-call-btn" class="btn btn-secondary">Qo'ng'iroq qilish</button>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>© 2025 Cereal Product. Barcha huquqlar himoyalangan.</p>
+  </footer>
+</body>
+</html>
